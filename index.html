@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -7,6 +8,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
     
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    
     <style>
         * {
             box-sizing: border-box;
@@ -358,11 +360,61 @@
             letter-spacing: 0.5px;
             direction: ltr;
         }
+
+        /* Cartoon fish animations */
+
+        .fish-illustration {
+            width: 90px;
+            height: 75px;
+            margin: 0 auto 12px;
+            display: block;
+            overflow: visible;
+            animation: fishFloat 3s ease-in-out infinite;
+        }
+
+        .character-card:nth-child(2) .fish-illustration {
+            animation-delay: 0.4s;
+        }
+
+        .character-card:nth-child(3) .fish-illustration {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes fishFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-7px); }
+        }
+
+        .fish-tail {
+            transform-origin: 68px 37px;
+            animation: tailMove 0.7s ease-in-out infinite alternate;
+        }
+
+        @keyframes tailMove {
+            from { transform: rotate(-8deg); }
+            to { transform: rotate(8deg); }
+        }
+
+        /* Natural blinking eyes */
+
+        .fish-eye {
+            transform-box: fill-box;
+            transform-origin: center;
+            animation: blink 4s infinite;
+        }
+
+        @keyframes blink {
+            0%, 44%, 48%, 100% { transform: scaleY(1); }
+            46% { transform: scaleY(0.1); }
+        }
+
     </style>
 </head>
+
 <body>
 
     <div class="presentation-card">
+
         <div class="progress-bar-bg">
             <div class="progress-bar-fill" id="progressFill"></div>
         </div>
@@ -371,141 +423,402 @@
             <div class="school-tag">
                 مدرسة مصر الدولية | قسم اللغة العربية
             </div>
+
             <div class="student-badge">
                 إعداد الطالب: أحمد رامي
             </div>
         </div>
 
         <div class="slides-viewport">
+
+            <!-- SLIDE 1 -->
             <div class="slide hero-slide active">
                 <div class="hero-subtitle">مشروع قراءة ورواية</div>
                 <h1 class="hero-title">رواية "السمكات الثلاث"</h1>
                 <div class="hero-author">من كتاب «كليلة ودمنة» للمفكر ابن المقفع</div>
+
                 <div class="hero-meta">
                     <div class="meta-card">الطالب: أحمد رامي</div>
                     <div class="meta-card">الصف الأول الإعدادي</div>
                 </div>
             </div>
 
+            <!-- SLIDE 2 -->
             <div class="slide">
                 <h2 class="slide-title">ملخص الرواية</h2>
+
                 <div class="quote-box">
                     تدور أحداث القصة حول ثلاث سمكات عاشت بسعادة في غدير ماء هادئ، حتى جاء صيادان وعزما على صيدهن. اختلفت ردود أفعالهن تجاه الخطر؛ فسارعت الأكثر حزماً بالهرب ليلاً إلى النهر ونجت، بينما تأخرت السمكة الذكية ولجأت لحيلة ادعاء الموت لتفلت من الصيادين، في حين استسلمت السمكة العاجزة للكسل والتردد حتى وقعت في الشباك وهلكت.
                 </div>
             </div>
 
+            <!-- SLIDE 3 -->
             <div class="slide">
+
                 <h2 class="slide-title">الشخصيات والمشكلة الرئيسة</h2>
+
                 <div class="grid-3">
+
+                    <!-- YELLOW FISH -->
                     <div class="character-card yellow">
+
+                        <svg class="fish-illustration" viewBox="0 0 100 75" xmlns="http://www.w3.org/2000/svg">
+
+                            <g class="fish-tail">
+                                <path d="M68 37 L91 19 Q88 37 91 55 Z"
+                                      fill="#f59e0b"
+                                      stroke="#b45309"
+                                      stroke-width="2"/>
+                            </g>
+
+                            <path d="M18 37 Q25 10 57 17 Q78 25 73 42 Q65 65 36 58 Q19 54 18 37Z"
+                                  fill="#fbbf24"
+                                  stroke="#b45309"
+                                  stroke-width="2.5"/>
+
+                            <path d="M40 18 Q50 5 57 19"
+                                  fill="#fde68a"
+                                  stroke="#b45309"
+                                  stroke-width="2"/>
+
+                            <path d="M40 56 Q50 68 58 55"
+                                  fill="#f59e0b"
+                                  stroke="#b45309"
+                                  stroke-width="2"/>
+
+                            <!-- Eye facing left -->
+                            <g class="fish-eye">
+                                <ellipse cx="27" cy="31" rx="7" ry="9" fill="white"/>
+                                <ellipse cx="25" cy="31" rx="3.5" ry="5" fill="#111827"/>
+                                <circle cx="24" cy="29" r="1.5" fill="white"/>
+                            </g>
+
+                            <!-- Smile on front -->
+                            <path d="M17 43 Q23 49 29 43"
+                                  fill="none"
+                                  stroke="#92400e"
+                                  stroke-width="2.2"
+                                  stroke-linecap="round"/>
+
+                            <circle cx="34" cy="44" r="3" fill="#f97316" opacity="0.5"/>
+
+                            <path d="M43 28 Q52 38 43 49"
+                                  fill="none"
+                                  stroke="#d97706"
+                                  stroke-width="2"/>
+
+                        </svg>
+
                         <div class="card-name">السمكة (كيسة)</div>
-                        <div class="card-desc">العاقلة الذكية: تأخرت قليلاً لكنها ابتكرت حيلة ادعاء الموت لتنجو بروحها.</div>
+
+                        <div class="card-desc">
+                            العاقلة الذكية: تأخرت قليلاً لكنها ابتكرت حيلة ادعاء الموت لتنجو بروحها.
+                        </div>
+
                     </div>
+
+                    <!-- GREEN FISH -->
                     <div class="character-card green">
+
+                        <svg class="fish-illustration" viewBox="0 0 100 75" xmlns="http://www.w3.org/2000/svg">
+
+                            <g class="fish-tail">
+                                <path d="M68 37 L91 19 Q88 37 91 55 Z"
+                                      fill="#10b981"
+                                      stroke="#047857"
+                                      stroke-width="2"/>
+                            </g>
+
+                            <path d="M18 37 Q25 10 57 17 Q78 25 73 42 Q65 65 36 58 Q19 54 18 37Z"
+                                  fill="#34d399"
+                                  stroke="#047857"
+                                  stroke-width="2.5"/>
+
+                            <path d="M40 18 Q50 5 57 19"
+                                  fill="#6ee7b7"
+                                  stroke="#047857"
+                                  stroke-width="2"/>
+
+                            <path d="M40 56 Q50 68 58 55"
+                                  fill="#10b981"
+                                  stroke="#047857"
+                                  stroke-width="2"/>
+
+                            <!-- Eye facing left -->
+                            <g class="fish-eye">
+                                <ellipse cx="27" cy="31" rx="7" ry="9" fill="white"/>
+                                <ellipse cx="25" cy="31" rx="3.5" ry="5" fill="#111827"/>
+                                <circle cx="24" cy="29" r="1.5" fill="white"/>
+                            </g>
+
+                            <!-- Smile on front -->
+                            <path d="M17 43 Q23 49 29 43"
+                                  fill="none"
+                                  stroke="#065f46"
+                                  stroke-width="2.2"
+                                  stroke-linecap="round"/>
+
+                            <circle cx="34" cy="44" r="3" fill="#fb7185" opacity="0.5"/>
+
+                            <path d="M43 28 Q52 38 43 49"
+                                  fill="none"
+                                  stroke="#059669"
+                                  stroke-width="2"/>
+
+                        </svg>
+
                         <div class="card-name">السمكة (أكيس منها)</div>
-                        <div class="card-desc">الأكثر حزماً وتدبيراً: هربت فوراً ليلاً إلى النهر الآمن قبل وصول الصيادين.</div>
+
+                        <div class="card-desc">
+                            الأكثر حزماً وتدبيراً: هربت فوراً ليلاً إلى النهر الآمن قبل وصول الصيادين.
+                        </div>
+
                     </div>
+
+                    <!-- RED FISH -->
                     <div class="character-card red">
+
+                        <svg class="fish-illustration" viewBox="0 0 100 75" xmlns="http://www.w3.org/2000/svg">
+
+                            <g class="fish-tail">
+                                <path d="M68 37 L91 19 Q88 37 91 55 Z"
+                                      fill="#ef4444"
+                                      stroke="#991b1b"
+                                      stroke-width="2"/>
+                            </g>
+
+                            <path d="M18 37 Q25 10 57 17 Q78 25 73 42 Q65 65 36 58 Q19 54 18 37Z"
+                                  fill="#f87171"
+                                  stroke="#991b1b"
+                                  stroke-width="2.5"/>
+
+                            <path d="M40 18 Q50 5 57 19"
+                                  fill="#fca5a5"
+                                  stroke="#991b1b"
+                                  stroke-width="2"/>
+
+                            <path d="M40 56 Q50 68 58 55"
+                                  fill="#ef4444"
+                                  stroke="#991b1b"
+                                  stroke-width="2"/>
+
+                            <!-- Eye facing left -->
+                            <g class="fish-eye">
+                                <ellipse cx="27" cy="31" rx="7" ry="9" fill="white"/>
+                                <ellipse cx="25" cy="31" rx="3.5" ry="5" fill="#111827"/>
+                                <circle cx="24" cy="29" r="1.5" fill="white"/>
+                            </g>
+
+                            <!-- Worried expression -->
+                            <path d="M17 44 Q23 40 29 45"
+                                  fill="none"
+                                  stroke="#7f1d1d"
+                                  stroke-width="2.2"
+                                  stroke-linecap="round"/>
+
+                            <circle cx="34" cy="44" r="3" fill="#fca5a5" opacity="0.7"/>
+
+                            <path d="M43 28 Q52 38 43 49"
+                                  fill="none"
+                                  stroke="#dc2626"
+                                  stroke-width="2"/>
+
+                        </svg>
+
                         <div class="card-name">السمكة (عاجزة)</div>
-                        <div class="card-desc">الكسولة المهملة: لم تتخذ أي قرار وظلت تسوف حتى وقعت في الشباك.</div>
+
+                        <div class="card-desc">
+                            الكسولة المهملة: لم تتخذ أي قرار وظلت تسوف حتى وقعت في الشباك.
+                        </div>
+
                     </div>
+
                 </div>
+
                 <div class="problem-card">
                     <div class="problem-title">المشكلة الأساسية:</div>
                     مرور صيادين بالغدير المعزول وعزمهما على العودة في الصباح الباكر لصيد جميع الأسماك الموجودة فيه.
                 </div>
+
             </div>
 
+            <!-- SLIDE 4 -->
             <div class="slide">
+
                 <h2 class="slide-title">تطور الأحداث</h2>
+
                 <div class="events-list">
+
                     <div class="event-item">
                         <div class="event-num">١</div>
                         <div class="event-text">استماع السمكات الثلاث لحديث الصيادين وإدراكهن للخطر المحدق بالغدير.</div>
                     </div>
+
                     <div class="event-item">
                         <div class="event-num">٢</div>
                         <div class="event-text">مسارعة السمكة الأكثر حزماً بالخروج من الغدير إلى النهر الكبير في نفس الليلة.</div>
                     </div>
+
                     <div class="event-item">
                         <div class="event-num">٣</div>
                         <div class="event-text">مفاجأة السمكة الثانية بانسداد المنفذ صباحاً، ولجوؤها لحيلة التظاهر بالوفاة للقفز للنهر.</div>
                     </div>
+
                     <div class="event-item">
                         <div class="event-num">٤</div>
                         <div class="event-text">استسلام السمكة الثالثة وترددها حتى ألقى الصيادان الشباك واصطاداهما.</div>
                     </div>
+
                 </div>
+
             </div>
 
+            <!-- SLIDE 5 -->
             <div class="slide">
+
                 <h2 class="slide-title">نهاية القصة</h2>
+
                 <div class="qa-grid" style="grid-template-columns: 1fr 1fr; gap: 20px;">
+
                     <div class="qa-card" style="border-top: 4px solid #10b981; background: rgba(16, 185, 129, 0.05);">
-                        <div class="qa-q" style="color: #34d399; font-size: 1.3rem;">نجاة العاقلات</div>
-                        <div class="qa-a" style="font-size: 1.1rem; line-height: 1.7;">تمكنت السمكتان "كيسة" و"أكيس منها" من النجاة والوصول إلى مياه النهر الواسعة والآمنة بفضل سرعة التصرف، والتفكير الذكي، وعدم الاستسلام للخوف.</div>
+
+                        <div class="qa-q" style="color: #34d399; font-size: 1.3rem;">
+                            نجاة العاقلات
+                        </div>
+
+                        <div class="qa-a" style="font-size: 1.1rem; line-height: 1.7;">
+                            تمكنت السمكتان "كيسة" و"أكيس منها" من النجاة والوصول إلى مياه النهر الواسعة والآمنة بفضل سرعة التصرف، والتفكير الذكي، وعدم الاستسلام للخوف.
+                        </div>
+
                     </div>
+
                     <div class="qa-card" style="border-top: 4px solid #ef4444; background: rgba(239, 68, 68, 0.05);">
-                        <div class="qa-q" style="color: #f87171; font-size: 1.3rem;">هلاك الكسولة</div>
-                        <div class="qa-a" style="font-size: 1.1rem; line-height: 1.7;">وقعت السمكة الثالثة "عاجزة" فريسة سهلة في شباك الصيادين، بسبب الكسل والتأجيل وعدم الأخذ بأسباب النجاة في الوقت المناسب.</div>
+
+                        <div class="qa-q" style="color: #f87171; font-size: 1.3rem;">
+                            هلاك الكسولة
+                        </div>
+
+                        <div class="qa-a" style="font-size: 1.1rem; line-height: 1.7;">
+                            وقعت السمكة الثالثة "عاجزة" فريسة سهلة في شباك الصيادين، بسبب الكسل والتأجيل وعدم الأخذ بأسباب النجاة في الوقت المناسب.
+                        </div>
+
                     </div>
+
                 </div>
+
             </div>
 
+            <!-- SLIDE 6 -->
             <div class="slide">
+
                 <h2 class="slide-title">تحليل العرض والأسئلة</h2>
+
                 <div class="qa-grid">
+
                     <div class="qa-card">
                         <div class="qa-q">من الشخصيات الرئيسة؟</div>
                         <div class="qa-a">الصيادان، والسمكات الثلاث (كيسة، أكيس منها، عاجزة).</div>
                     </div>
+
                     <div class="qa-card">
                         <div class="qa-q">ما المشكلة التي واجهتهم؟</div>
                         <div class="qa-a">خطر الصيد الذي هدد حياة السمكات بعد اكتشاف الغدير.</div>
                     </div>
+
                     <div class="qa-card">
                         <div class="qa-q">كيف تطورت الأحداث؟</div>
                         <div class="qa-a">بتفاوت ردود أفعال السمكات بين الحزم المبكر، والذكاء الطارئ، والكسل.</div>
                     </div>
+
                     <div class="qa-card">
                         <div class="qa-q">ما النهاية؟</div>
                         <div class="qa-a">نجاة السمكتين الذكيتين وهلاك السمكة العاجزة في الشباك.</div>
                     </div>
+
                 </div>
+
             </div>
 
+            <!-- SLIDE 7 -->
             <div class="slide">
+
                 <h2 class="slide-title">القيم والدروس المستفادة</h2>
+
                 <div class="values-grid">
-                    <div class="value-card">✓ الاستعداد للأمر قبل وقوعه، وعدم الإهمال في مواجهة أي خطر متوقع.</div>
-                    <div class="value-card">✓ استخدام العقل والحيلة الذكية وسرعة البديهة في الأزمات.</div>
-                    <div class="value-card">✓ التردد والكسل والتأجيل يؤدي دائماً إلى العواقب الوخيمة.</div>
-                    <div class="value-card">✓ الإرادة القوية والعزيمة الصادقة هما السبيل الوحيد للنجاة.</div>
+
+                    <div class="value-card">
+                        ✓ الاستعداد للأمر قبل وقوعه، وعدم الإهمال في مواجهة أي خطر متوقع.
+                    </div>
+
+                    <div class="value-card">
+                        ✓ استخدام العقل والحيلة الذكية وسرعة البديهة في الأزمات.
+                    </div>
+
+                    <div class="value-card">
+                        ✓ التردد والكسل والتأجيل يؤدي دائماً إلى العواقب الوخيمة.
+                    </div>
+
+                    <div class="value-card">
+                        ✓ الإرادة القوية والعزيمة الصادقة هما السبيل الوحيد للنجاة.
+                    </div>
+
                 </div>
+
             </div>
 
+            <!-- SLIDE 8 -->
             <div class="slide hero-slide">
+
                 <img src="favicon.png" alt="Ahmed AI" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 3px solid #38bdf8; box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);">
-                <h2 style="font-size: 2.2rem; margin-bottom: 15px;"><a href="https://ahmedramyshafik.github.io/a/" target="_blank" style="color: #38bdf8; text-decoration: none; border-bottom: 2px dashed #38bdf8; padding-bottom: 4px;">Ahmed AI</a></h2>
-                <a href="https://ahmedramyshafik.github.io/a/" target="_blank" style="display: inline-block; background: rgba(56, 189, 248, 0.15); border: 1px solid #38bdf8; color: #38bdf8; padding: 10px 24px; border-radius: 12px; font-size: 1.1rem; font-weight: 700; text-decoration: none; margin-bottom: 20px; transition: all 0.2s;">click here to view Ahmed AI profile</a>
-                <p style="font-size: 1.4rem; color: #cbd5e1; font-weight: 700;">?Thanks for listening, any questions</p>
+
+                <h2 style="font-size: 2.2rem; margin-bottom: 15px;">
+                    <a href="https://ahmedramyshafik.github.io/a/" target="_blank" style="color: #38bdf8; text-decoration: none; border-bottom: 2px dashed #38bdf8; padding-bottom: 4px;">
+                        Ahmed AI
+                    </a>
+                </h2>
+
+                <a href="https://ahmedramyshafik.github.io/a/" target="_blank" style="display: inline-block; background: rgba(56, 189, 248, 0.15); border: 1px solid #38bdf8; color: #38bdf8; padding: 10px 24px; border-radius: 12px; font-size: 1.1rem; font-weight: 700; text-decoration: none; margin-bottom: 20px; transition: all 0.2s;">
+                    click here to view Ahmed AI profile
+                </a>
+
+                <p style="font-size: 1.4rem; color: #cbd5e1; font-weight: 700;">
+                    ?Thanks for listening, any questions
+                </p>
+
             </div>
+
         </div>
 
         <div class="bottom-bar">
+
             <div class="nav-controls">
-                <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)" disabled>previous</button>
-                <div class="slide-counter" id="slideCounter">الشريحة 1 من 8</div>
-                <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">next</button>
+
+                <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)" disabled>
+                    previous
+                </button>
+
+                <div class="slide-counter" id="slideCounter">
+                    الشريحة 1 من 8
+                </div>
+
+                <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">
+                    next
+                </button>
+
             </div>
+
             <div class="copyright-text">
                 © 2026 Ahmed AI Technology. Designed & Engineered by Ahmed Ramy.
             </div>
+
         </div>
+
     </div>
 
     <script>
+
         let currentSlide = 0;
+
         const slides = document.querySelectorAll('.slide');
         const totalSlides = slides.length;
         const prevBtn = document.getElementById('prevBtn');
@@ -513,32 +826,131 @@
         const slideCounter = document.getElementById('slideCounter');
         const progressFill = document.getElementById('progressFill');
 
+        // Soft slide sound effect
+
+        let audioContext = null;
+
+        function playSlideSound() {
+
+            try {
+
+                if (!audioContext) {
+
+                    const AudioContextClass =
+                        window.AudioContext || window.webkitAudioContext;
+
+                    if (!AudioContextClass) return;
+
+                    audioContext = new AudioContextClass();
+
+                }
+
+                if (audioContext.state === 'suspended') {
+                    audioContext.resume();
+                }
+
+                const oscillator = audioContext.createOscillator();
+                const gain = audioContext.createGain();
+
+                oscillator.type = 'sine';
+
+                oscillator.frequency.setValueAtTime(
+                    650,
+                    audioContext.currentTime
+                );
+
+                oscillator.frequency.exponentialRampToValueAtTime(
+                    850,
+                    audioContext.currentTime + 0.07
+                );
+
+                gain.gain.setValueAtTime(
+                    0.0001,
+                    audioContext.currentTime
+                );
+
+                gain.gain.exponentialRampToValueAtTime(
+                    0.045,
+                    audioContext.currentTime + 0.015
+                );
+
+                gain.gain.exponentialRampToValueAtTime(
+                    0.0001,
+                    audioContext.currentTime + 0.13
+                );
+
+                oscillator.connect(gain);
+                gain.connect(audioContext.destination);
+
+                oscillator.start();
+                oscillator.stop(audioContext.currentTime + 0.14);
+
+            } catch (error) {
+
+                console.log('Audio effect unavailable:', error);
+
+            }
+
+        }
+
         function updateSlide() {
+
             slides.forEach((slide, index) => {
-                slide.classList.toggle('active', index === currentSlide);
+
+                slide.classList.toggle(
+                    'active',
+                    index === currentSlide
+                );
+
             });
-            
-            slideCounter.textContent = `الشريحة ${currentSlide + 1} من ${totalSlides}`;
-            progressFill.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
-            
+
+            slideCounter.textContent =
+                `الشريحة ${currentSlide + 1} من ${totalSlides}`;
+
+            progressFill.style.width =
+                `${((currentSlide + 1) / totalSlides) * 100}%`;
+
             prevBtn.disabled = currentSlide === 0;
             nextBtn.disabled = currentSlide === totalSlides - 1;
+
         }
 
         function changeSlide(direction) {
+
+            const previousSlide = currentSlide;
+
             currentSlide += direction;
+
             if (currentSlide < 0) currentSlide = 0;
-            if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
-            updateSlide();
+
+            if (currentSlide >= totalSlides) {
+                currentSlide = totalSlides - 1;
+            }
+
+            if (currentSlide !== previousSlide) {
+
+                playSlideSound();
+                updateSlide();
+
+            }
+
         }
 
         document.addEventListener('keydown', (e) => {
+
             if (e.key === 'ArrowRight') {
+
                 changeSlide(-1);
+
             } else if (e.key === 'ArrowLeft') {
+
                 changeSlide(1);
+
             }
+
         });
+
     </script>
+
 </body>
 </html>
